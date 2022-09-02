@@ -7,7 +7,6 @@ Nama | Acer Aspire 3 Slim A314-22-R5E2-8
 ---- | -------------------------------
 Sistem Operasi | Microsoft Windows 11
 Prosesor | AMD Ryzen 3-3250U
-Software | Office Home & Student 2019
 Display | 14 inch FHD
 RAM | 8GB DDR4
 Penyimpanan |  256GB PCIe Gen3, 8 Gb/s ,NVMe
