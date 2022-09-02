@@ -1,5 +1,8 @@
-Nama : Delphia Aryana
-NIM : 2110131220012
+Nama : Delphia Aryana 
+
+Nim : 2110131220012
+
+<br>
 
 ## __Deskripsi Komponen-Komponen Laptop__
 #
