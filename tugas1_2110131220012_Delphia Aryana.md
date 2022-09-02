@@ -22,7 +22,7 @@ __1. PC/Laptop__
 
 <img src="https://www.gadgetsquad.id/wp-content/uploads/2020/12/IMG_1864-1-1024x576.jpg" style="width: 50%">
 
- Laptop adalah komputer kecil (mini) yang menggunakan teknologi layar tipis. Komponennya menjadi satu kesatuan seperti layar, pointer, processor, dan keyboard sehingga mudah dibawa-bawa dan sumber dayanya berasal dari baterai. Di sini, saya menggunakan laptop dengan merk __Acer Aspire 3 Slim A314-22-R6YK-8__.
+ Laptop adalah komputer kecil (mini) yang menggunakan teknologi layar tipis. Komponennya menjadi satu kesatuan seperti layar, pointer, processor, dan keyboard sehingga mudah dibawa-bawa dan sumber dayanya berasal dari baterai. Di sini, saya menggunakan laptop dengan merk __Acer Aspire 3 Slim A314-22-R5E2-8__.
 
 Kegunaan Laptop :
 > Laptop memiliki banyak sekali kegunaan. Selain bisa digunakan untuk mengetik berbagai dokumen dan membuat pekerjaan jauh lebih cepat, laptop juga dibekali dengan kemampuan lain yang dapat mendukung hobi maupun pekerjaan seseorang. Mulai dari melakukan editing foto maupun video, merancang desain, hingga mencari hiburan. 
