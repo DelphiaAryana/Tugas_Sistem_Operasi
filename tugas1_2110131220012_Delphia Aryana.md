@@ -1,3 +1,6 @@
+Nama : Delphia Aryana
+NIM : 2110131220012
+
 ## __Deskripsi Komponen-Komponen Laptop__
 #
 
