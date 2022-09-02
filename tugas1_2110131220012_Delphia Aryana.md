@@ -7,8 +7,6 @@ Nim : 2110131220012
 ## __Deskripsi Komponen-Komponen Laptop__
 #
 
-Di era teknologi ini, laptop sangat diperlukan. Terlebih lagi dalam perkuliahan maupun pekerjaan. Saya sendiri sering menggunakan laptop untuk kebutuhan kuliah, sehingga laptop tak terlepas dari aktivitas sehari-hari saya. Pada kesempatan kali ini, saya akan menyebutkan spesifikasi laptop yang saya gunakan. Saya juga akan mendeskripsikan pengertian laptop dan komponen-komponennya beserta manfaatnya.
-
 Nama | Acer Aspire 3 Slim A314-22-R5E2-8
 ---- | -------------------------------
 Sistem Operasi | Microsoft Windows 11
