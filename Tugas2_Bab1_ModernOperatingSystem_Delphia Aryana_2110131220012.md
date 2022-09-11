@@ -336,7 +336,7 @@ memory, with a substantial time penalty. Cache memory is limited in size due to 
 
 Caching plays a major role in many areas of computer science, not just caching lines of RAM. Whenever a resource can be divided into pieces, some of which are used much more heavily than others, caching is often used to improve performance. Operating systems use it all the time. For example, most operating systems keep (pieces of) heavily used files in main memory to avoid having to fetch them from the disk repeatedly. Similarly, the results of converting long path names like
 
-<p>&nbsp &nbsp &nbsp _/home/ast/projects/minix3/src/kernel/clock.c_ </p>
+<p>&nbsp &nbsp &nbsp <i>/home/ast/projects/minix3/src/kernel/clock.c</i></p>
 
 into the disk address where the file is located can be cached to avoid repeated lookups. Finally, when the address of a Web page (URL) is converted to a network address (IP address), the result can be cached for future use. Many other uses exist.
 
