@@ -25,7 +25,7 @@ system to get its work done.
 
 A simple overview of the main components under discussion here is given in Fig. 1-1. Here we see the hardware at the bottom. The hardware consists of chips, boards, disks, a keyboard, a monitor, and similar physical objects. On top of the hardware is the software. Most computers have two modes of operation: kernel mode and user mode. The operating system, the most fundamental piece of software, runs in __kernel mode__ (also called __supervisor mode__). In this mode it has complete access to all the hardware and can execute any instruction the machine is capable of executing. The rest of the software runs in __user mode__, in which only a subset of the machine instructions is available. In particular, those instructions that affect control of the machine or do __I/O__)__Input__/Output" are forbidden to user-mode programs. We will come back to the difference between kernel mode and user mode repeatedly throughout this book. It plays a crucial role in how operating systems work.
 
-<p align="center"><img src="gambar1.1.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.1.png" width="500px"><p>
 
 The user interface program, shell or GUI, is the lowest level of user-mode software, and allows the user to start other programs, such as a Web browser, email reader, or music player. These programs, too, make heavy use of the operating system.
 
@@ -65,7 +65,7 @@ This abstraction is the key to managing all this complexity. Good abstractions t
 
 This point is so important that it is worth repeating in different words. With all due respect to the industrial engineers who so carefully designed the Macintosh, hardware is ugly. Real processors, memories, disks, and other devices are very complicated and present difficult, awkward, idiosyncratic, and inconsistent interfaces to the people who have to write software to use them. Sometimes this is due to the need for backward compatibility with older hardware. Other times it is an attempt to save money. Often, however, the hardware designers do not realize (or care) how much trouble they are causing for the software. One of the major tasksof the operating system is to hide the hardware and present programs (and their programmers) with nice, clean, elegant, consistent, abstractions to work with instead. Operating systems turn the ugly into the beautiful, as shown in Fig. 1-2.
 
-<p align="center"><img src="gambar1.2.png" width="600px"><p>
+<p align="center"><img src="img/gambar1.2.png" width="600px"><p>
 
 It should be noted that the operating system’s real customers are the application programs (via the application programmers, of course). They are the ones who deal directly with the operating system and its abstractions. In contrast, end users deal with the abstractions provided by the user interface, either a command-line shell or a graphical interface. While the abstractions at the user interface may be similar to the ones provided by the operating system, this is not always the case. To make this point clearer, consider the normal Windows desktop and the line-oriented command prompt. Both are programs running on the Windows operating system and use the abstractions Windows provides, but they offer very different user interfaces. Similarly, a Linux user running Gnome or KDE sees a very different interface than a Linux user working directly on top of the underlying X Window System, but the underlying operating system abstractions are the same in
 both cases.
@@ -124,7 +124,7 @@ Given the high cost of the equipment, it is not surprising that people quickly l
 After about an hour of collecting a batch of jobs, the cards were read onto a magnetic tape, which was carried into the machine room, where it was mounted on a tape drive. The operator then loaded a special program (the ancestor of today’s operating system), which read the first job from tape and ran it. The output was written onto a second tape, instead of being printed. After each job finished, the
 operating system automatically read the next job from the tape and began running
 
-<p align="center"><img src="gambar1.3.png" width="700px"><p>
+<p align="center"><img src="img/gambar1.3.png" width="700px"><p>
 
 it. When the whole batch was done, the operator removed the input and output tapes, replaced the input tape with the next batch, and brought the output tape to a 1401 for printing __off line__ (i.e., not connected to the main computer).
 
@@ -138,7 +138,7 @@ Large second-generation computers were used mostly for scientific and engineerin
 
 By the early 1960s, most computer manufacturers had two distinct, incompatible, product lines. On the one hand, there were the word-oriented, large-scale scientific computers, such as the 7094, which were used for industrial-strength numerical calculations in science and engineering. On the other hand, there were the
 
-<p align="center"><img src="gambar1.4.png" width="700px"><p>
+<p align="center"><img src="img/gambar1.4.png" width="700px"><p>
 
 character-oriented, commercial computers, such as the 1401, which were widely used for tape sorting and printing by banks and insurance companies.
 
@@ -158,7 +158,7 @@ Despite its enormous size and problems, OS/360 and the similar third-generation 
 
 The solution that evolved was to partition memory into several pieces, with a different job in each partition, as shown in Fig. 1-5. While one job was waiting for I/O to complete, another job could be using the CPU. If enough jobs could be held in main memory at once, the CPU could be kept busy nearly 100% of the time. Having multiple jobs safely in memory at once requires special hardware to protect each job against snooping and mischief by the other ones, but the 360 and other third-generation systems were equipped with this hardware.
 
-<p align="center"><img src="gambar1.5.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.5.png" width="500px"><p>
 
 Another major feature present in third-generation operating systems was the ability to read jobs from cards onto the disk as soon as they were brought to the computer room. Then, whenever a running job finished, the operating system could load a new job from the disk into the now-empty partition and run it. This technique is called spooling (from Simultaneous Peripheral Operation On Line) and was also used for output. With spooling, the 1401s were no longer needed, and much carrying of tapes disappeared.
 
@@ -261,7 +261,7 @@ An operating system is intimately tied to the hardware of the computer it runs o
 
 Conceptually, a simple personal computer can be abstracted to a model resembling that of Fig. 1-6. The CPU, memory, and I/O devices are all connected by a system bus and communicate with one another over it. Modern personal computers have a more complicated structure, involving multiple buses, which we will look at later. For the time being, this model will be sufficient. In the following sections, we will briefly review these components and examine some of the hardware issues that are of concern to operating system designers. Needless to say, this will be a very compact summary. Many books have been written on the subject of computer hardware and computer organization. Two well-known ones are by Tanenbaum and Austin (2012) and Patterson and Hennessy (2013).
 
-<p><img src="gambar1.6.png" width="700px"><p>
+<p><img src="img/gambar1.6.png" width="700px"><p>
 
 <br>
 
@@ -283,7 +283,7 @@ The operating system must be fully aware of all the registers. When time multipl
 
 To improve performance, CPU designers have long abandoned the simple model of fetching, decoding, and executing one instruction at a time. Many modern CPUs have facilities for executing more than one instruction at the same time. For example, a CPU might have separate fetch, decode, and execute units, so that while it is executing instruction n, it could also be decoding instruction n + 1 and fetching instruction n + 2. Such an organization is called a __pipeline__ and is illustrated in Fig. 1-7(a) for a pipeline with three stages. Longer pipelines are common. In most pipeline designs, once an instruction has been fetched into the pipeline, it must be executed, even if the preceding instruction was a conditional branch that was taken. Pipelines cause compiler writers and operating system writers great headaches because they expose the complexities of the underlying machine to them and they have to deal with them.
 
-<p align="center"><img src="gambar1.7.png" width="700px"><p>
+<p align="center"><img src="img/gambar1.7.png" width="700px"><p>
 
 Even more advanced than a pipeline design is a __superscalar__ CPU, shown in Fig. 1-7(b). In this design, multiple execution units are present, for example, one for integer arithmetic, one for floating-point arithmetic, and one for Boolean operations. Two or more instructions are fetched at once, decoded, and dumped into a holding buffer until they can be executed. As soon as an execution unit becomes available, it looks in the holding buffer to see if there is an instruction it can handle, and if so, it removes the instruction from the buffer and executes it. An implication of this design is that program instructions are often executed out of order. For the most part, it is up to the hardware to make sure the result produced is the same one a sequential implementation would have produced, but an annoying amount of the complexity is foisted onto the operating system, as we shall see.
 
@@ -315,7 +315,7 @@ Beyond multithreading, many CPU chips now hav e four, eight, or more complete pr
 
 Incidentally, in terms of sheer numbers, nothing beats a modern __GPU (Graphics Processing Unit)__. A GPU is a processor with, literally, thousands of tiny cores. They are very good for many small computations done in parallel, like rendering polygons in graphics applications. They are not so good at serial tasks. They are also hard to program. While GPUs can be useful for operating systems (e.g., encryption or processing of network traffic), it is not likely that much of the operating system itself will run on the GPUs.
 
-<p align="center"><img src="gambar1.8.png" width="600px"><p>
+<p align="center"><img src="img/gambar1.8.png" width="600px"><p>
 
 <br>
 
@@ -326,7 +326,7 @@ have higher speed, smaller capacity, and greater cost per bit than the lower one
 
 The top layer consists of the registers internal to the CPU. They are made of the same material as the CPU and are thus just as fast as the CPU. Consequently, there is no delay in accessing them. The storage capacity available in them is
 
-<p align="center"><img src="gambar1.9.png" width="650px"><p>
+<p align="center"><img src="img/gambar1.9.png" width="650px"><p>
 
 typically 32 × 32 bits on a 32-bit CPU and 64 × 64 bits on a 64-bit CPU. Less than 1 KB in both cases. Programs must manage the registers (i.e., decide what to keep in them) themselves, in software.
 
@@ -370,7 +370,7 @@ Yet another kind of memory is CMOS, which is volatile. Many computers use CMOS m
 Next in the hierarchy is magnetic disk (hard disk). Disk storage is two orders of magnitude cheaper than RAM per bit and often two orders of magnitude larger as well. The only problem is that the time to randomly access data on it is close to three orders of magnitude slower. The reason is that a disk is a mechanical device,
 as shown in Fig. 1-10.
 
-<p align="center"><img src="gambar1.10.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.10.png" width="500px"><p>
 
 A disk consists of one or more metal platters that rotate at 5400, 7200, 10,800 RPM or more. A mechanical arm pivots over the platters from the corner, similar to the pickup arm on an old 33-RPM phonograph for playing vinyl records Information is written onto the disk in a series of concentric circles. At any giv en arm position, each of the heads can read an annular region called a __track__. Together, all the tracks for a given arm position form a __cylinder__.
 
@@ -416,7 +416,7 @@ then blocks the caller if need be and looks for other work to do. When the contr
 Interrupts are very important in operating systems, so let us examine the idea more closely. In Fig. 1-11(a) we see a three-step process for I/O. In step 1, the driver tells the controller what to do by writing into its device registers. The controller then starts the device. When the controller has finished reading or writing the number of bytes it has been told to transfer, it signals the interrupt controller
 chip using certain bus lines in step 2. If the interrupt controller is ready to accept the interrupt (which it may not be if it is busy handling a higher-priority one), it asserts a pin on the CPU chip telling it, in step 3. In step 4, the interrupt controller puts the number of the device on the bus so the CPU can read it and know which device has just finished (many devices may be running at the same time).
 
-<p align="center"><img src="gambar1.11.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.11.png" width="500px"><p>
 
 Once the CPU has decided to take the interrupt, the program counter and PSW are typically then pushed onto the current stack and the CPU switched into kernel mode. The device number may be used as an index into part of memory to find the
 address of the interrupt handler for this device. This part of memory is called the __interrupt vector__. Once the interrupt handler (part of the driver for the interrupting device) has started, it removes the stacked program counter and PSW and saves them, then queries the device to learn its status. When the handler is all finished, it returns to the previously running user program to the first instruction that was not yet executed. These steps are shown in Fig. 1-11(b).
@@ -432,7 +432,7 @@ while interrupts are disabled, the interrupt controller decides which one to let
 
 The organization of Fig. 1-6 was used on minicomputers for years and also on the original IBM PC. However, as processors and memories got faster, the ability of a single bus (and certainly the IBM PC bus) to handle all the traffic was strained to the breaking point. Something had to give. As a result, additional buses were added, both for faster I/O devices and for CPU-to-memory traffic. As a consequence of this evolution, a large x86 system currently looks something like Fig. 1-12.
 
-<p align="center"><img src="gambar1.12.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.12.png" width="500px"><p>
 
 This system has many buses (e.g., cache, memory, PCIe, PCI, USB, SATA, and DMI), each with a different transfer rate and function. The operating system must be aware of all of them for configuration and management. The main bus is the __PCIe__ (__Peripheral Component Interconnect Express__) bus. 
 
@@ -579,7 +579,7 @@ The key process-management system calls are those dealing with the creation and 
 If a process can create one or more other processes (referred to as __child processes__) and these processes in turn can create child processes, we quickly arrive at the process tree structure of Fig. 1-13. Related processes that are cooperating to get some job done often need to communicate with one another and synchronize their activities. This communication is called __interprocess communication__, and
 will be addressed in detail in Chap. 2.
 
-<p align="center"><img src="gambar1.13.png" width="600px"><p>
+<p align="center"><img src="img/gambar1.13.png" width="600px"><p>
 
 Other process system calls are available to request more memory (or release unused memory), wait for a child process to terminate, and overlay its program with a different one.
 
@@ -613,7 +613,7 @@ Another key concept supported by virtually all operating systems is the file sys
 
 To provide a place to keep files, most PC operating systems have the concept of a directory as a way of grouping files together. A student, for example, might have one directory for each course he is taking (for the programs needed for that course), another directory for his electronic mail, and still another directory for his World Wide Web home page. System calls are then needed to create and remove directories. Calls are also provided to put an existing file in a directory and to remove a file from a directory. Directory entries may be either files or other directories. This model also gives rise to a hierarchy—the file system—as shown in Fig. 1-14.
 
-![](gambar1.14.png)
+![](img/gambar1.14.png)
 
 The process and file hierarchies both are organized as trees, but the similarity stops there. Process hierarchies usually are not very deep (more than three levels is unusual), whereas file hierarchies are commonly four, fiv e, or even more levels deep. Process hierarchies are typically short-lived, generally minutes at most, whereas the directory hierarchy may exist for years. Ownership and protection also differ for processes and files. Typically, only a parent process may control or even access a child process, but mechanisms nearly always exist to allow files and directories to be read by a wider group than just the owner.
 
@@ -627,13 +627,13 @@ Another important concept in UNIX is the mounted file system. Most desktop compu
 
 However, the file system on the CD-ROM cannot be used, because there is no way to specify path names on it. UNIX does not allow path names to be prefixed by a drive name or number; that would be precisely the kind of device dependence that operating systems ought to eliminate. Instead, the mount system call allows the file system on the CD-ROM to be attached to the root file system wherever the program wants it to be. In Fig. 1-15(b) the file system on the CD-ROM has been mounted on directory _b_, thus allowing access to files _/b/x_ and _/b/y_. If directory _b_ had contained any files they would not be accessible while the CD-ROM was mounted, since _/b_ would refer to the root directory of the CD-ROM. (Not being able to access these files is not as serious as it at first seems: file systems are nearly always mounted on empty directories.) If a system contains multiple hard disks, they can all be mounted into a single tree as well.
 
-![](gambar1.15.png)
+![](img/gambar1.15.png)
 
 Another important concept in UNIX is the __special file__. Special files are provided in order to make I/O devices look like files. That way, they can be read and written using the same system calls as are used for reading and writing files. Two kinds of special files exist: __block special files__ and __character special files__. Block special files are used to model devices that consist of a collection of randomly addressable blocks, such as disks. By opening a block special file and reading, say, block 4, a program can directly access the fourth block on the device, without regard to the structure of the file system contained on it. Similarly, character special files are used to model printers, modems, and other devices that accept or output a character stream. By convention, the special files are kept in the _/dev_ directory. For example, _/dev/lp_ might be the printer (once called the line printer).
 
 The last feature we will discuss in this overview relates to both processes and files: pipes. A _pipe_ is a sort of pseudofile that can be used to connect two processes, as shown in Fig. 1-16. If processes _A_ and _B_ wish to talk using a pipe, they must set it up in advance. When process _A_ wants to send data to process _B_, it writes on the pipe as though it were an output file. In fact, the implementation of a pipe is very much like that of a file. Process _B_ can read the data by reading from the pipe as though it were an input file. Thus, communication between processes in UNIX looks very much like ordinary file reads and writes. Stronger yet, the only way a process can discover that the output file it is writing on is not really a file, but a pipe, is by making a special system call. File systems are very important. We will have much more to say about them in Chap. 4 and also in Chaps. 10 and 11.
 
-![](gambar1.16.png)
+![](img/gambar1.16.png)
 
 <br>
 
@@ -765,7 +765,7 @@ C and C++ compilers push the parameters onto the stack in reverse order for hist
 
 The library procedure, possibly written in assembly language, typically puts the system-call number in a place where the operating system expects it, such as a register (step 5). Then it executes a TRAP instruction to switch from user mode to kernel mode and start execution at a fixed address within the kernel (step 6). The TRAP instruction is actually fairly similar to the procedure-call instruction in the
 
-<p align="center"><img src="gambar1.17.png" width="700px"></p>
+<p align="center"><img src="img/gambar1.17.png" width="700px"></p>
 
 sense that the instruction following it is taken from a distant location and the return address is saved on the stack for use later.
 
@@ -791,7 +791,7 @@ The first group of calls in Fig. 1-18 deals with process management. Fork is a g
 
 __Process management__
 
-<p align="center">Call</p> | <p align="center">Description</p>
+Call | Description
 -----|------------
 pid = for k( ) |  Create a child process identical to the parent
 pid = waitpid(pid, &statloc, options) | Wait for a child to terminate
@@ -802,7 +802,7 @@ exit(status) | Ter minate process execution and return status
 
 __File management__
 
-<p align="center">Call</p> | <p align="center">Description</p>
+Call | Description
 -----|------------
 fd = open(file, how, ...) | Open a file for reading, writing, or both
 s = close(fd) | Close an open file
@@ -813,9 +813,9 @@ s = stat(name, &buf) | Get a file’s status infor mation
 
 <br>
 
-__Director y- and file-system management__
+__Directory- and file-system management__
 
-<p align="center">Call</p> | <p align="center">Description</p>
+Call | Description
 -----|------------
 s = mkdir(name, mode) | Create a new director y
 s = rmdir(name)  | Remove an empty directory
@@ -828,20 +828,20 @@ s = umount(special)  | Unmount a file system
 
 __Miscellaneous__
 
-<p align="center">Call</p> | <p align="center">Description</p>
+Call | Description
 -----|------------
 s = chdir(dirname) | Change the wor king director y
 s = chmod(name, mode) | Change a file’s protection bits
 s = kill(pid, signal) | Send a signal to a process
 seconds = time(&seconds) | Get the elapsed time since Jan. 1, 1970
 
-<img src="gambar1.18.png" width="600px">
+<img src="img/gambar1.18.png" width="600px">
 
 In most cases, after a fork, the child will need to execute different code from the parent. Consider the case of the shell. It reads a command from the terminal, forks off a child process, waits for the child to execute the command, and then reads the next command when the child terminates. To wait for the child to finish, the parent executes a waitpid system call, which just waits until the child terminates (any child if more than one exists). Waitpid can wait for a specific child, or for any old child by setting the first parameter to −1. When waitpid completes, the address pointed to by the second parameter, _statloc_, will be set to the child process’ exit status (normal or abnormal termination and exit value). Various options are also provided, specified by the third parameter. For example, returning immediately if no child has already exited.
 
 Now consider how fork is used by the shell. When a command is typed, the shell forks off a new process. This child process must execute the user command. It does this by using the execve system call, which causes its entire core image to be replaced by the file named in its first parameter. (Actually, the system call itself is exec, but several library procedures call it with different parameters and slightly different names. We will treat these as system calls here.) A highly simplified shell illustrating the use of fork, waitpid, and execve is shown in Fig. 1-19.
 
-![](gambar1.19.png)
+![](img/gambar1.19.png)
 
 In the most general case, execve has three parameters: the name of the file to be executed, a pointer to the argument array, and a pointer to the environment array. These will be described shortly. Various library routines, including execl, execv, execle, and execve, are provided to allow the parameters to be omitted or specified in various ways. Throughout this book we will use the name exec to represent the system call invoked by all of these.
 
@@ -873,7 +873,7 @@ Many system calls relate to the file system. In this section we will look at cal
 
 To read or write a file, it must first be opened. This call specifies the file name to be opened, either as an absolute path name or relative to the working directory, as well as a code of _O RDONLY, O WRONLY,_ or _O RDWR,_ meaning open for reading, writing, or both. To create a new file, the _O CREAT_ parameter is used.
 
-<p align="center"><img src="gambar1.20.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.20.png" width="500px"><p>
 
 The file descriptor returned can then be used for reading or writing. Afterward, the file can be closed by close, which makes the file descriptor available for reuse on a subsequent open.
 
@@ -898,7 +898,7 @@ users, ast and jim, each having his own directory with some files. If _ast_ now 
 
 the file _memo_ in _jim’s_ directory is now entered into _ast’s_ directory under the name _note_. Thereafter, _/usr/jim/memo_ and _/usr/ast/note_ refer to the same file. As an aside, whether user directories are kept in _/usr, /user, /home,_ or somewhere else is simply a decision made by the local system administrator.
 
-<p align="center"><img src="gambar1.21.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.21.png" width="500px"><p>
 
 Understanding how link works will probably make it clearer what it does. Every file in UNIX has a unique number, its i-number, that identifies it. This i-number is an index into a table __of i-nodes__, one per file, telling who owns the file, where its disk blocks are, and so on. A directory is simply a file containing a set of (i-number, ASCII name) pairs. In the first versions of UNIX, each directory entry was 16 bytes—2 bytes for the i-number and 14 bytes for the name. Now a more complicated structure is needed to support long file names, but conceptually a directory is still a set of (i-number, ASCII name) pairs. In Fig. 1-21, _mail_ has i-number 16, and so on. What link does is simply create a brand new directory entry with a (possibly new) name, using the i-number of an existing file. In Fig. 1-21(b), two entries have the same i-number (70) and thus refer to the same file. If either one is later removed, using the unlink system call, the other one remains. If both are removed, UNIX sees that no entries to the file exist (a field in the i-node keeps track of the number of directory entries pointing to the file), so the file is removed from the disk.
 
@@ -910,7 +910,7 @@ By executing the mount system call, the USB file system can be attached to the r
 
 where the first parameter is the name of a block special file for USB drive 0, the second parameter is the place in the tree where it is to be mounted, and the third parameter tells whether the file system is to be mounted read-write or read-only.
 
-<p align="center"><img src="gambar1.22.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.22.png" width="500px"><p>
 
 After the mount call, a file on drive 0 can be accessed by just using its path from the root directory or the working directory, without regard to which drive it is on. In fact, second, third, and fourth drives can also be mounted anywhere in the tree. The mount call makes it possible to integrate removable media into a single integrated file hierarchy, without having to worry about which device a file is on. Although this example involves CD-ROMs, portions of hard disks (often called __partitions__ or __minor devices__) can also be mounted this way, as well as external hard disks and USB sticks. When a file system is no longer needed, it can be unmounted with the umount system call.
 
@@ -956,7 +956,7 @@ Windows has directories and they are created with CreateDirector y and RemoveDir
 
 The Win32 interface does not have links to files, mounted file systems, security, or signals, so the calls corresponding to the UNIX ones do not exist. Of course, Win32 has a huge number of other calls that UNIX does not have, especially for managing the GUI. Windows Vista has an elaborate security system and also supports file links. Windows 7 and 8 add yet more features and system calls.
 
-<p align="center">UNIX</p> | <p align="center">Win32</p> | <p align="center">Description</p>
+UNIX | Win32 | Description
 -----|------------|----------
 fork |  CreateProcess | Create a new process
 waitpid | WaitForSingleObject | Can wait for a process to exit
@@ -979,7 +979,7 @@ chmod | (none) | Win32 does not support secur ity (although NT does)
 kill | (none) | Win32 does not support signals
 time | GetLocalTime | Get the current time
 
-<img src="gambar1.23.png" width="500px">
+<img src="img/gambar1.23.png" width="500px">
 
 One last note about Win32 is perhaps worth making. Win32 is not a terribly uniform or consistent interface. The main culprit here was the need to be backward compatible with the previous 16-bit interface used in Windows 3.x.
 
@@ -1006,7 +1006,7 @@ This organization suggests a basic structure for the operating system:
 
 In this model, for each system call there is one service procedure that takes care of it and executes it. The utility procedures do things that are needed by several service procedures, such as fetching data from user programs. This division of the procedures into three layers is shown in Fig. 1-24. In addition to the core operating system that is loaded when the computer is booted, many operating systems support loadable extensions, such as I/O device drivers and file systems. These components are loaded on demand. In UNIX they are called __shared libraries__. In Windows they are called __DLLs__ (__Dynamic-Link Libraries__). They hav e file extension _.dll_ and the _C:\Windows\system32_ directory on Windows systems has well over 1000 of them.
 
-<p align="center"><img src="gambar1.24.png" width="500px"><p>
+<p align="center"><img src="img/gambar1.24.png" width="500px"><p>
 
 <br>
 
@@ -1016,7 +1016,7 @@ A generalization of the approach of Fig. 1-24 is to organize the operating syste
 
 The system had six layers, as shown in Fig. 1-25. Layer 0 dealt with allocation of the processor, switching between processes when interrupts occurred or timers expired. Above layer 0, the system consisted of sequential processes, each of which could be programmed without having to worry about the fact that multiple processes were running on a single processor. In other words, layer 0 provided the basic multiprogramming of the CPU.
 
-<p align="center">Layer</p> | <p align="center">Function</p>
+Layer | Function
 -----|------------
 5 | The operator
 4 | User programs
@@ -1025,7 +1025,7 @@ The system had six layers, as shown in Fig. 1-25. Layer 0 dealt with allocation 
 1 | Memory and drum management
 0 |  Processor allocation and multiprogramming
 
-<img src="gambar1.25.png" width="500px">
+<img src="img/gambar1.25.png" width="500px">
 
 Layer 1 did the memory management. It allocated space for processes in main memory and on a 512K word drum used for holding parts of processes (pages) for which there was no room in main memory. Above layer 1, processes did not have to worry about whether they were in memory or on the drum; the layer 1 software took care of making sure pages were brought into memory at the moment they were needed and removed when they were not needed.
 
@@ -1052,7 +1052,7 @@ The MINIX 3 microkernel is only about 12,000 lines of C and some 1400 lines of a
 
 Outside the kernel, the system is structured as three layers of processes all running in user mode. The lowest layer contains the device drivers. Since they run in user mode, they do not have physical access to the I/O port space and cannot issue I/O commands directly. Instead, to program an I/O device, the driver builds a structure telling which values to write to which I/O ports and makes a kernel call telling
 
-<p align="center"><img src="gambar1.26.png" width="800px"><p>
+<p align="center"><img src="img/gambar1.26.png" width="800px"><p>
 
 the kernel to do the write. This approach means that the kernel can check to see that the driver is writing (or reading) from I/O it is authorized to use. Consequently (and unlike a monolithic design), a buggy audio driver cannot accidentally write on the disk.
 
@@ -1074,7 +1074,7 @@ Communication between clients and servers is often by message passing. To obtain
 
 An obvious generalization of this idea is to have the clients and servers run on different computers, connected by a local or wide-area network, as depicted in Fig. 1-27. Since clients communicate with servers by sending messages, the clients need not know whether the messages are handled locally on their own machines, or whether they are sent across a network to servers on a remote machine. As far as the client is concerned, the same thing happens in both cases: requests are sent and replies come back. Thus the client-server model is an abstraction that can be used for a single machine or for a network of machines.
 
-![](gambar1.27.png)
+![](img/gambar1.27.png)
 
 Increasingly many systems involve users at their home PCs as clients and large machines elsewhere running as servers. In fact, much of the Web operates this way. A PC sends a request for a Web page to the server and the Web page comes back. This is a typical use of the client-server model in a network.
 
@@ -1092,7 +1092,7 @@ This system, originally called CP/CMS and later renamed VM/370 (Seawright and Ma
 
 The heart of the system, known as the __virtual machine monitor__, runs on the bare hardware and does the multiprogramming, providing not one, but several virtual machines to the next layer up, as shown in Fig. 1-28. However, unlike all other operating systems, these virtual machines are not extended machines, with files and other nice features. Instead, they are _exact_ copies of the bare hardware, including kernel/user mode, I/O, interrupts, and everything else the real machine has.
 
-![](gambar1.28.png)
+![](img/gambar1.28.png)
 
 Because each virtual machine is identical to the true hardware, each one can run any operating system that will run directly on the bare hardware. Different virtual machines can, and frequently do, run different operating systems. On the original IBM VM/370 system, some ran OS/360 or one of the other large batch or transaction-processing operating systems, while others ran a single-user, interactive system called __CMS__ (__Conversational Monitor System__) for interactive timesharing users. The latter was popular with programmers.
 
@@ -1112,7 +1112,7 @@ Virtualization is also popular in the Web hosting world. Without virtualization,
 
 Another use of virtualization is for end users who want to be able to run two or more operating systems at the same time, say Windows and Linux, because some of their favorite application packages run on one and some run on the other. This situation is illustrated in Fig. 1-29(a), where the term ‘‘virtual machine monitor’’ has been renamed __type 1 hypervisor__, which is commonly used nowadays because ‘‘virtual machine monitor’’ requires more keystrokes than people are prepared to put up with now. Note that many authors use the terms interchangeably though.
 
-![](gambar1.29.png)
+![](img/gambar1.29.png)
 
 While no one disputes the attractiveness of virtual machines today, the problem then was implementation. In order to run virtual machine software on a computer, its CPU must be virtualizable (Popek and Goldberg, 1974). In a nutshell, here is the problem. When an operating system running on a virtual machine (in user mode) executes a privileged instruction, such as modifying the PSW or doing I/O, it is essential that the hardware trap to the virtual-machine monitor so the instruction can be emulated in software. On some CPUs—notably the Pentium, its predecessors, and its clones—attempts to execute privileged instructions in user mode are just ignored. This property made it impossible to have virtual machines on this hardware, which explains the lack of interest in the x86 world. Of course, there were interpreters for the Pentium, such as _Bochs_, that ran on the Pentium, but with a performance loss of one to two orders of magnitude, they were not useful for serious work.
 
@@ -1217,7 +1217,7 @@ Fortunately, computers are very good at precisely this sort of thing. On UNIX sy
 
 Once all the _.o_ files are ready, they are passed to a program called the __linker__ to combine all of them into a single executable binary file. Any library functions called are also included at this point, interfunction references are resolved, and machine addresses are relocated as need be. When the linker is finished, the result is an executable program, traditionally called _a.out_ on UNIX systems. The various components of this process are illustrated in Fig. 1-30 for a program with three C files and two header files. Although we have been discussing operating system development here, all of this applies to developing any large program.
 
-![](gambar1.30.png)
+![](img/gambar1.30.png)
 
 <br>
 
@@ -1226,3 +1226,69 @@ Once all the _.o_ files are ready, they are passed to a program called the __lin
 Once the operating system binary has been linked, the computer can be rebooted and the new operating system started. Once running, it may dynamically load pieces that were not statically included in the binary such as device drivers and file systems. At run time the operating system may consist of multiple segments, for the text (the program code), the data, and the stack. The text segment is normally immutable, not changing during execution. The data segment starts out at a certain size and initialized with certain values, but it can change and grow as need be. The stack is initially empty but grows and shrinks as functions are called and returned from. Often the text segment is placed near the bottom of memory, the data segment just above it, with the ability to grow upward, and the stack segment at a high virtual address, with the ability to grow downward, but different systems work differently.
 
 In all cases, the operating system code is directly executed by the hardware, with no interpreter and no just-in-time compilation, as is normal with Java.
+
+<br>
+
+## 1.9 RESEARCH ON OPERATING SYSTEMS
+
+Computer science is a rapidly advancing field and it is hard to predict where it is going. Researchers at universities and industrial research labs are constantly thinking up new ideas, some of which go nowhere but some of which become the cornerstone of future products and have massive impact on the industry and users. Telling which is which turns out to be easier to do in hindsight than in real time. Separating the wheat from the chaff is especially difficult because it often takes 20 to 30 years from idea to impact.
+
+For example, when President Eisenhower set up the Dept. of Defense’s Advanced Research Projects Agency (ARPA) in 1958, he was trying to keep the Army from killing the Navy and the Air Force over the Pentagon’s research budget. He was not trying to invent the Internet. But one of the things ARPA did was fund some university research on the then-obscure concept of packet switching, which led to the first experimental packet-switched network, the ARPANET. It went live in 1969. Before long, other ARPA-funded research networks were connected to the ARPANET, and the Internet was born. The Internet was then happily used by academic researchers for sending email to each other for 20 years. In the early 1990s, Tim Berners-Lee invented the World Wide Web at the CERN research lab in Geneva and Marc Andreesen wrote a graphical browser for it at the University of Illinois. All of a sudden the Internet was full of twittering teenagers. President Eisenhower is probably rolling over in his grave.
+
+Research in operating systems has also led to dramatic changes in practical systems. As we discussed earlier, the first commercial computer systems were all batch systems, until M.I.T. inv ented general-purpose timesharing in the early 1960s. Computers were all text-based until Doug Engelbart invented the mouse and the graphical user interface at Stanford Research Institute in the late 1960s. Who knows what will come next?
+
+In this section and in comparable sections throughout the book, we will take a brief look at some of the research in operating systems that has taken place during the past 5 to 10 years, just to give a flavor of what might be on the horizon. This introduction is certainly not comprehensive. It is based largely on papers that have been published in the top research conferences because these ideas have at least survived a rigorous peer review process in order to get published. Note that in computer science—in contrast to other scientific fields—most research is published in conferences, not in journals. Most of the papers cited in the research sections were published by either ACM, the IEEE Computer Society, or USENIX and are available over the Internet to (student) members of these organizations. For more information about these organizations and their digital libraries, see
+
+<p>&nbsp &nbsp &nbsp ACM &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp http://www.acm.org</p>
+<p>&nbsp &nbsp &nbsp IEEE Computer Society &nbsp &nbsp &nbsp &nbsp http://www.computer.org</p>
+<p>&nbsp &nbsp &nbsp USENIX &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp http://www.usenix.org</p>
+
+Virtually all operating systems researchers realize that current operating systems are massive, inflexible, unreliable, insecure, and loaded with bugs, certain ones more than others _(names withheld here to protect the guilty)_. Consequently, there is a lot of research on how to build better operating systems. Work has recently been published about bugs and debugging (Renzelmann et al., 2012; and Zhou et al., 2012), crash recovery (Correia et al., 2012; Ma et al., 2013; Ongaro et al., 2011; and Yeh and Cheng, 2012), energy management (Pathak et al., 2012; Petrucci and Loques, 2012; and Shen et al., 2013), file and storage systems (Elnably and Wang, 2012; Nightingale et al., 2012; and Zhang et al., 2013a), high-performance I/O (De Bruijn et al., 2011; Li et al., 2013a; and Rizzo, 2012), hyperthreading and multithreading (Liu et al., 2011), live update (Giuffrida et al., 2013), managing GPUs (Rossbach et al., 2011), memory management (Jantz et al., 2013; and Jeong et al., 2013), multicore operating systems (Baumann et al., 2009; Kapritsos, 2012; Lachaize et al., 2012; and Wentzlaff et al., 2012), operating system correctness (Elphinstone et al., 2007; Yang et al., 2006; and Klein et al., 2009), operating system reliability (Hruby et al., 2012; Ryzhyk et al., 2009, 2011 and Zheng et al., 2012), privacy and security (Dunn et al., 2012; Giuffrida et al., 2012; Li et al., 2013b; Lorch et al., 2013; Ortolani and Crispo, 2012; Slowinska et al., 2012; and Ur et al., 2012), usage and performance monitoring (Harter et. al, 2012; and Ravindranath et al., 2012), and virtualization (Agesen et al., 2012; Ben-Yehuda et al., 2010; Colp et al., 2011; Dai et al., 2013; Tarasov et al., 2013; and Williams et al., 2012) among many other topics.
+
+<br>
+
+## 1.10 OUTLINE OF THE REST OF THIS BOOK
+
+We have now completed our introduction and bird’s-eye view of the operating system. It is time to get down to the details. As mentioned already, from the programmer’s point of view, the primary purpose of an operating system is to provide some key abstractions, the most important of which are processes and threads, address spaces, and files. Accordingly the next three chapters are devoted to these critical topics.
+
+Chapter 2 is about processes and threads. It discusses their properties and how they communicate with one another. It also gives a number of detailed examples of how interprocess communication works and how to avoid some of the pitfalls.
+
+In Chap. 3 we will study address spaces and their adjunct, memory management, in detail. The important topic of virtual memory will be examined, along with closely related concepts such as paging and segmentation.
+
+Then, in Chap. 4, we come to the all-important topic of file systems. To a considerable extent, what the user sees is largely the file system. We will look at both the file-system interface and the file-system implementation.
+
+Input/Output is covered in Chap. 5. The concepts of device independence and device dependence will be looked at. Several important devices, including disks, keyboards, and displays, will be used as examples.
+
+Chapter 6 is about deadlocks. We briefly showed what deadlocks are in this chapter, but there is much more to say. Ways to prevent or avoid them are discussed.
+
+At this point we will have completed our study of the basic principles of single-CPU operating systems. However, there is more to say, especially about advanced topics. In Chap. 7, we examine virtualization. We discuss both the principles, and some of the existing virtualization solutions in detail. Since virtualization is heavily used in cloud computing, we will also gaze at existing clouds. Another advanced topic is multiprocessor systems, including multicores, parallel computers, and distributed systems. These subjects are covered in Chap. 8.
+
+A hugely important subject is operating system security, which is covered in Chap 9. Among the topics discussed in this chapter are threats (e.g., viruses and worms), protection mechanisms, and security models.
+
+Next we have some case studies of real operating systems. These are UNIX, Linux, and Android (Chap. 10), and Windows 8 (Chap. 11). The text concludes with some wisdom and thoughts about operating system design in Chap. 12.
+
+<br>
+
+## 1.11 METRIC UNITS
+
+To avoid any confusion, it is worth stating explicitly that in this book, as in computer science in general, metric units are used instead of traditional English units (the furlong-stone-fortnight system). The principal metric prefixes are listed in Fig. 1-31. The prefixes are typically abbreviated by their first letters, with the units greater than 1 capitalized. Thus a 1-TB database occupies 1012 bytes of storage and a 100-psec (or 100-ps) clock ticks every 10−10 seconds. Since milli and micro both begin with the letter ‘‘m,’’ a choice had to be made. Normally, ‘‘m’’ is for milli and ‘‘_μ_’’ (the Greek letter mu) is for micro.
+
+![](img/gambar1.31.png)
+
+It is also worth pointing out that, in common industry practice, the units for measuring memory sizes have slightly different meanings. There kilo means 210 (1024) rather than 103 (1000) because memories are always a power of two. Thus a 1-KB memory contains 1024 bytes, not 1000 bytes. Similarly, a 1-MB memory contains 220 (1,048,576) bytes and a 1-GB memory contains 230 (1,073,741,824) bytes. However, a 1-Kbps communication line transmits 1000 bits per second and a 10-Mbps LAN runs at 10,000,000 bits/sec because these speeds are not powers of two. Unfortunately, many people tend to mix up these two systems, especially for disk sizes. To avoid ambiguity, in this book, we will use the symbols KB, MB, and GB for 210, 220, and 230 bytes respectively, and the symbols Kbps, Mbps, and Gbps for 103, 106, and 109 bits/sec, respectively.
+
+<br>
+
+## 1.12 SUMMARY
+
+Operating systems can be viewed from two viewpoints: resource managers and extended machines. In the resource-manager view, the operating system’s job is to manage the different parts of the system efficiently. In the extended-machine view, the job of the system is to provide the users with abstractions that are more convenient to use than the actual machine. These include processes, address spaces, and files.
+
+Operating systems have a long history, starting from the days when they replaced the operator, to modern multiprogramming systems. Highlights include early batch systems, multiprogramming systems, and personal computer systems.
+
+Since operating systems interact closely with the hardware, some knowledge of computer hardware is useful to understanding them. Computers are built up of processors, memories, and I/O devices. These parts are connected by buses.
+
+The basic concepts on which all operating systems are built are processes, memory management, I/O management, the file system, and security. Each of these will be treated in a subsequent chapter.
+
+The heart of any operating system is the set of system calls that it can handle. These tell what the operating system really does. For UNIX, we have looked at four groups of system calls. The first group of system calls relates to process creation and termination. The second group is for reading and writing files. The third group is for directory management. The fourth group contains miscellaneous calls.
+
+Operating systems can be structured in several ways. The most common ones are as a monolithic system, a hierarchy of layers, microkernel, client-server, virtual machine, or exokernel.
