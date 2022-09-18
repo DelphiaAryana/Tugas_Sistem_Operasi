@@ -21,8 +21,19 @@ NIM : 2110131220012
 - Manajemen jaringan
 - _Command-Interpreter System_
 
-### CONTOH :
+<br>
 
+Di sini saya akan memberikan 3 contoh komponen sistem operasi :
+
+## Manajemen Proses
+
+1. Menampilkan Proses Linux
+
+<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya dengan top adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Perintah top mungkin adalah salah satu yang paling dasar, sering digunakan untuk menampilkan proses teratas yang biasanya mengkonsumsi resource sistem yang paling besar. Top adalah aplikasi yang berdiri sendiri, setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
+
+<p align="center">Top :</p> 
+<p align="center"><img src="img/photo1.png" width="670px"></p> 
+<p align="center"><img src="img/photo2.png" width="450px"></p>
 <br>
 
 <h2 align="center"> Layanan Sistem Operasi </h2>
