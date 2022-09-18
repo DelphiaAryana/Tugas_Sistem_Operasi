@@ -33,7 +33,43 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 <p align="center">Top :</p> 
 <p align="center"><img src="img/photo1.png" width="670px"></p> 
+
+<p align="center">Ps :</p>
 <p align="center"><img src="img/photo2.png" width="450px"></p>
+
+<br>
+
+2. Mematikan Prioritas Proses
+
+<p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>‘hang’</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>“kill”</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
+
+<p align="center"><img src="img/photo3.png" width="670px"></p>
+
+<br>
+
+## Manajemen Memori
+
+<p align="justify">Pada command line, informasi mengenai memori tersedia melalui <b>free perintah</b>. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
+
+<p align="center"><img src="img/photo4.png" width="600px"></p>
+
+<br>
+
+## Manajemen Sistem Berkas
+
+<p align="justify"> Berkas adalah kumpulan informasi yang berhubungan, sesuai dengan tujuan pembuat berkas tersebut. Umumnya berkas merepresentasikan program dan data. Berkas dapatmempunyai struktur yang bersifat hirarkis (direktori, volume, dll.). Sistem operasi bertanggung-jawab dalam aktivitas yang berhubungan dengan manajemen berkas, seperti pembuatan berkas, penghapusan berkas, dll.
+
+<p align="center"><img src="img/photo4.png" width="600px"></p>
+
+
+<br>
+
+## Manajemen Masukan/Keluaran (I/O)
+
+<p align="justify"> Sistem ini sering disebut dengan device manager. Menyediakan device driver yang umum sehingga operasi Masukan/Keluaran dapat seragam (membuka, membaca, menulis, menutup). Pada command line, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
+
+<p align="center"><img src="img/photo5.png" width="450px"></p>
+
 <br>
 
 <h2 align="center"> Layanan Sistem Operasi </h2>
@@ -51,7 +87,31 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 8. Efesiensi penggunaan sistem
 9. _Accounting_
 
-### CONTOH :
+<br>
+
+Di sini saya akan memberikan 3 contoh komponen sistem operasi :
+
+## Sistem Menipulasi Berkas
+
+<p align="justify"> Sistem manipulasi berkas merupakan layanan sistem operasi yang dimana program harus membaca dan menulis berkas, dan kadang kala juga harus membuat dan menghapus berkas. Berikut contohnya pada command line.
+
+<p align="center"><img src="img/photo6.png" width="600px"></p>
+
+<br>
+
+## Deteksi Error
+
+<p align="justify">Untuk setiap jenis error sistem operasi harus bisa mengambil langkah yang tepat untuk mempertahankan jalannya proses komputasi. Misalnya dengan menghentikan jalannya program, mencoba kembali melakukan operasi yang dijalankan, atau melaporkan kesalahan yang terjadi agar pengguna dapat mengambil langkah selanjutnya. 
+
+<p align="center"><img src="img/photo7.png" width="550px"></p>
+
+<br>
+
+## Proteksi
+
+<p align="justify">Layanan proteksi memastikan bahwa segala akses ke sumber daya terkontrol. Dan tentu saja keamanan terhadap gangguan dari luar sistem tersebut. Keamanan bisa saja dilakukan dengan terlebih dahulu mengidentifikasi pengguna. Ini bisa dilakukan dengan meminta password bila ingin menggunakan sumber daya. 
+
+<p align="center"><img src="img/photo8.png" width="400px"></p>
 
 <br>
 
