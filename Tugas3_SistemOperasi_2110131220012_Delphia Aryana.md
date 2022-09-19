@@ -34,6 +34,30 @@ Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini 
 
 <p><img src="img/photo11.png" width="700px"></p>
 
+Manajemen proses juga dapat dilihat pada <i>commad line</i>. Berikut contohnya.
+
+- Menampilkan Proses Linux
+
+<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
+
+Top :
+
+<p><img src="img/photo1.png" width="670px"></p>
+
+Ps :
+
+<p><img src="img/photo2.png" width="350px"></p>
+
+<br>
+
+- Mematikan Prioritas Proses
+
+<p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>hang</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>kill</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
+
+<p><img src="img/photo3.png" width="670px"></p>
+
+Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
+
 <br>
 
 ### 2. Manajemen Memori
@@ -142,29 +166,12 @@ Di sini saya akan memberikan 3 contoh <i>system call</i> :
 
 <br>
 
-### 2. Manajemen Proses
+### 2. Membuat File Di Dalam Direktori
 
-- Menampilkan Proses Linux
+Di <i>command line</i> juga dapat membuat file di dalam direktori. Pertama, gunakan perintah <b>cd [nama direktori]</b> lalu tekan enter. Setelahnya, gunakan perintah <b>cat > [nama file]</b>. Maka, file yang baru saja dibuat akan berada di dalam direktori yang dipilih.
 
-<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
-
-Top :
-
-<p><img src="img/photo1.png" width="670px"></p>
-
-Ps :
-
-<p><img src="img/photo2.png" width="350px"></p>
-
-<br>
-
-- Mematikan Prioritas Proses
-
-<p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>hang</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>kill</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
-
-<p><img src="img/photo3.png" width="670px"></p>
-
-Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
+<p><img src="img/photo14.png" width="350px"></p>
+<p><img src="img/photo15.png" width="350px"></p>
 
 <br>
 
