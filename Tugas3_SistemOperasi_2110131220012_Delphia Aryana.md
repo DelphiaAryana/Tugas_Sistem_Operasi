@@ -26,7 +26,7 @@ Sistem Operasi Linux Debian 11
 
 <br>
 
-Di sini saya akan memberikan 3 contoh komponen sistem operasi :
+Di sini saya akan memberikan 4 contoh komponen sistem operasi :
 
 ### 1. Manajemen Proses
 
