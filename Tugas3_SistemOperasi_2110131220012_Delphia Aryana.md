@@ -40,6 +40,8 @@ Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini 
 
 <p align="justify"> Pada system monitor juga terdapat manajemen memori yang merupakan tindakan untuk mengelola memori laptop saya.
 
+<p><img src="img/photo13.png" width="900px"></p>
+
 <p><img src="img/photo10.png" width="900px"></p>
 
 <br>
