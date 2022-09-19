@@ -69,7 +69,7 @@ Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini 
 
 ### 4. Manajemen Masukan/Keluaran (I/O)
 
-<p align="justify"> Pada <i>command line</i>, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
+<p align="justify"> Pada <i>command line</i>, <b>Ps</b> merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah <b>cat</b>. Maka output akan langsung tampil.
 
 <p><img src="img/photo5.png" width="380px"></p>
 
@@ -136,7 +136,7 @@ Di sini saya akan memberikan 3 contoh <i>system call</i> :
 
 ### 1. Manajemen Berkas
 
-<p align="justify"> Manajemen berkas merupakan layanan sistem operasi yang dimana program harus mengatur berkas seperti membuat dan menghapus berkas. Berikut contohnya pada <i>command line</i>.
+<p align="justify"> Manajemen berkas merupakan layanan sistem operasi yang dimana program harus mengatur berkas seperti membuat dan menghapus berkas. Berikut contohnya pada <i>command line</i>. Untuk membuat direktori baru, gunakan peintah <b>mkdir (nama direktori baru)</b>. Untuk menghapus, gunakan perintah <b>rm -r (nama direktori)</b>.
 
 <p><img src="img/photo6.png" width="600px"></p>
 
@@ -146,7 +146,7 @@ Di sini saya akan memberikan 3 contoh <i>system call</i> :
 
 - Menampilkan Proses Linux
 
-<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya dengan top adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
+<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
 
 Top :
 
@@ -170,7 +170,7 @@ Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
 
 ### 3. Informasi/Pemeliharaan
 
-<p align="justify">Pada command line, informasi mengenai memori tersedia melalui free perintah. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
+<p align="justify">Pada command line, informasi mengenai memori tersedia melalui <b>free</b> perintah. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
 
 <p><img src="img/photo4.png" width="670px"></p>
 
