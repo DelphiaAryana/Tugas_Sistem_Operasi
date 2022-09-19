@@ -1,6 +1,9 @@
 ### Tugas 3 Sistem Operasi
 Nama : Delphia Aryana
+
 NIM : 2110131220012
+
+Sistem Operasi Linux Debian 11
 
 <br>
 
@@ -25,39 +28,25 @@ NIM : 2110131220012
 
 Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
-### Manajemen Proses
+### 1. Manajemen Proses
 
-1. Menampilkan Proses Linux
+Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini saya membuka lewat System Monitor yang tersedia di Linux Debian 11.
 
-<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya dengan top adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Perintah top mungkin adalah salah satu yang paling dasar, sering digunakan untuk menampilkan proses teratas yang biasanya mengkonsumsi resource sistem yang paling besar. Top adalah aplikasi yang berdiri sendiri, setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
-
-<p align="center">Top :</p> 
-<p align="center"><img src="img/photo1.png" width="670px"></p> 
-
-<p align="center">Ps :</p>
-<p align="center"><img src="img/photo2.png" width="450px"></p>
+<img src="img/photo11.png" width="700px"> 
 
 <br>
 
-2. Mematikan Prioritas Proses
+### 2. Manajemen Memori
 
-<p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>‘hang’</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>“kill”</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
+<p align="justify"> Pada system monitor juga terdapat manajemen memori yang merupakan tindakan untuk mengelola memori laptop saya.
 
-<p align="center"><img src="img/photo3.png" width="670px"></p>
-
-<br>
-
-### Manajemen Memori
-
-<p align="justify">Pada command line, informasi mengenai memori tersedia melalui <b>free perintah</b>. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
-
-<p align="center"><img src="img/photo4.png" width="600px"></p> 
+<img src="img/photo10.png" width="900px">
 
 <br>
 
-### Manajemen Sistem Berkas
+### 3. Manajemen Sistem Berkas
 
-<p align="justify"> Berkas adalah kumpulan informasi yang berhubungan, sesuai dengan tujuan pembuat berkas tersebut. Umumnya berkas merepresentasikan program dan data. Berkas dapatmempunyai struktur yang bersifat hirarkis (direktori, volume, dll.). Sistem operasi bertanggung-jawab dalam aktivitas yang berhubungan dengan manajemen berkas, seperti pembuatan berkas, penghapusan berkas, dll.
+<p align="justify"> Sistem operasi bertanggung-jawab dalam aktivitas yang berhubungan dengan manajemen berkas, seperti pembuatan berkas, penghapusan berkas, dll. Berikut merupakan contoh membuat folder pada Linux Debian 11.
 
 <p align="center"><img src="img/tutor1.jpg" width="550px"></p>
 <p align="center">Pilih file atau langsung klik <i>icon home</i></p>
@@ -76,11 +65,11 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 <br>
 
-### Manajemen Masukan/Keluaran (I/O)
+### 4. Manajemen Masukan/Keluaran (I/O)
 
-<p align="justify"> Sistem ini sering disebut dengan device manager. Menyediakan device driver yang umum sehingga operasi Masukan/Keluaran dapat seragam (membuka, membaca, menulis, menutup). Pada command line, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
+<p align="justify"> Pada <i>command line</i>, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
 
-<p align="center"><img src="img/photo5.png" width="450px"></p>
+<img src="img/photo5.png" width="380px">
 
 <br>
 
@@ -101,29 +90,29 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 <br>
 
-Di sini saya akan memberikan 3 contoh komponen sistem operasi :
+Di sini saya akan memberikan 3 contoh layanan sistem operasi :
 
-### Sistem Menipulasi Berkas
+### 1. Membuat Catatan
 
-<p align="justify"> Sistem manipulasi berkas merupakan layanan sistem operasi yang dimana program harus membaca dan menulis berkas, dan kadang kala juga harus membuat dan menghapus berkas. Berikut contohnya pada command line.
+<p align="justify"> Di Linux Debian 11 terdapat alat pemrosesan kata untuk membuat catatan yang bernama <b>Gnote</b>. Berikut merupakan contoh penggunaannya.
 
-<p align="center"><img src="img/photo6.png" width="600px"></p>
-
-<br>
-
-### Deteksi Error
-
-<p align="justify">Untuk setiap jenis error sistem operasi harus bisa mengambil langkah yang tepat untuk mempertahankan jalannya proses komputasi. Misalnya dengan menghentikan jalannya program, mencoba kembali melakukan operasi yang dijalankan, atau melaporkan kesalahan yang terjadi agar pengguna dapat mengambil langkah selanjutnya. 
-
-<p align="center"><img src="img/photo7.png" width="550px"></p>
+<img src="img/photo12.jpg" width="600px">
 
 <br>
 
-### Proteksi
+### 2. Deteksi Error
 
-<p align="justify">Layanan proteksi memastikan bahwa segala akses ke sumber daya terkontrol. Dan tentu saja keamanan terhadap gangguan dari luar sistem tersebut. Keamanan bisa saja dilakukan dengan terlebih dahulu mengidentifikasi pengguna. Ini bisa dilakukan dengan meminta password bila ingin menggunakan sumber daya. 
+<p align="justify">Contoh di bawah merupakan laporan saat sistem operasi tidak dapat memasang lokasi. Sistem operasi gagal menerima daftar berbagi dari server karena tidak ada file atau direktori yang diminta. Sehingga pengguna dapat mengambil langkah selanjutnya. 
 
-<p align="center"><img src="img/photo8.png" width="400px"></p>
+<img src="img/photo9.png" width="600px">
+
+<br>
+
+### 3. Proteksi
+
+<p align="justify">Layanan proteksi memastikan bahwa segala akses ke sumber daya terkontrol dan aman. Hal ini bisa dilakukan dengan meminta password bila ingin menggunakan sumber daya. Di bawah ini merupakan contoh proteksi pada <i>command line</i>.
+
+<img src="img/photo8.png" width="250px">
 
 <br>
 
@@ -138,4 +127,47 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 - Informasi/pemeliharaan _(information maintance)_
 - Komunikasi _(communication)_
 
-### CONTOH :
+<br>
+
+Di sini saya akan memberikan 3 contoh <i>system call</i> :
+
+### 1. Manajemen Berkas
+
+<p align="justify"> Manajemen berkas merupakan layanan sistem operasi yang dimana program harus mengatur berkas seperti membuat dan menghapus berkas. Berikut contohnya pada <i>command line</i>.
+
+<img src="img/photo6.png" width="600px">
+
+<br>
+
+### 2. Manajemen Proses
+
+- Menampilkan Proses Linux
+
+<p align="justify">Perintah yang paling banyak digunakan untuk melihat proses adalah <b>top</b> dan <b>ps</b>. Perbedaannya dengan top adalah top lebih sering digunakan secara interaktif dan ps lebih sering digunakan dalam script, digabungkan dengan perintah bash lainnya atau yang serupa. Setelah perintah dieksekusi, layout baru akan muncul dan daftar beberapa proses akan secara konstan diperbaharui setiap detik. Layout baru ini sebenarnya bisa dikendalikan melalui keyboard Anda.
+
+Top :
+
+<img src="img/photo1.png" width="670px"> 
+
+Ps :
+
+<img src="img/photo2.png" width="350px">
+
+<br>
+
+- Mematikan Prioritas Proses
+
+<p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>hang</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>kill</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
+
+<img src="img/photo3.png" width="670px">
+
+Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
+
+<br>
+
+### 3. Informasi/Pemeliharaan
+
+<p align="justify">Pada command line, informasi mengenai memori tersedia melalui free perintah. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
+
+<img src="img/photo4.png" width="670px">
+
