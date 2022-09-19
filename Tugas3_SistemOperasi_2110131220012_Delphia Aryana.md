@@ -51,15 +51,32 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 <p align="justify">Pada command line, informasi mengenai memori tersedia melalui <b>free perintah</b>. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
 
-<p align="center"><img src="img/photo4.png" width="600px"></p>
+<p align="center"><img src="img/photo4.png" width="600px"></p> 
+
+<br>
 
 ### Manajemen Sistem Berkas
 
 <p align="justify"> Berkas adalah kumpulan informasi yang berhubungan, sesuai dengan tujuan pembuat berkas tersebut. Umumnya berkas merepresentasikan program dan data. Berkas dapatmempunyai struktur yang bersifat hirarkis (direktori, volume, dll.). Sistem operasi bertanggung-jawab dalam aktivitas yang berhubungan dengan manajemen berkas, seperti pembuatan berkas, penghapusan berkas, dll.
 
-<p align="center"><img src="img/photo4.png" width="600px"></p>
+<p align="center"><img src="img/tutor1.jpg" width="550px"></p>
+<p align="center">Pilih file atau langsung klik <i>icon home</i></p>
 
-## Manajemen Masukan/Keluaran (I/O)
+<p align="center"><img src="img/tutor2.jpg" width="550px"></p>
+<p align="center">Jika sudah berada pada tampilan home, klik kanan lalu pilih <i>create new folder</i></p>
+
+<p align="center"><img src="img/tutor4.jpg" width="550px"></p>
+<p align="center">Akan muncul folder baru yang belum memiliki nama <i>(untitled folder)</i></p>
+
+<p align="center"><img src="img/tutor5.jpg" width="550px"></p>
+<p align="center">Beri nama folder tersebut</p>
+
+<p align="center"><img src="img/tutor6.jpg" width="550px"></p>
+<p align="center">Jika sudah, klik enter. Maka folder baru siap untuk digunakan.</p>
+
+<br>
+
+### Manajemen Masukan/Keluaran (I/O)
 
 <p align="justify"> Sistem ini sering disebut dengan device manager. Menyediakan device driver yang umum sehingga operasi Masukan/Keluaran dapat seragam (membuka, membaca, menulis, menutup). Pada command line, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
 
@@ -92,11 +109,15 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 <p align="center"><img src="img/photo6.png" width="600px"></p>
 
+<br>
+
 ### Deteksi Error
 
 <p align="justify">Untuk setiap jenis error sistem operasi harus bisa mengambil langkah yang tepat untuk mempertahankan jalannya proses komputasi. Misalnya dengan menghentikan jalannya program, mencoba kembali melakukan operasi yang dijalankan, atau melaporkan kesalahan yang terjadi agar pengguna dapat mengambil langkah selanjutnya. 
 
 <p align="center"><img src="img/photo7.png" width="550px"></p>
+
+<br>
 
 ### Proteksi
 
