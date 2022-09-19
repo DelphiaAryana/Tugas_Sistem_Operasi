@@ -32,7 +32,7 @@ Di sini saya akan memberikan 3 contoh komponen sistem operasi :
 
 Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini saya membuka lewat System Monitor yang tersedia di Linux Debian 11.
 
-<img src="img/photo11.png" width="700px"> 
+<p><img src="img/photo11.png" width="700px"></p>
 
 <br>
 
@@ -40,7 +40,7 @@ Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini 
 
 <p align="justify"> Pada system monitor juga terdapat manajemen memori yang merupakan tindakan untuk mengelola memori laptop saya.
 
-<img src="img/photo10.png" width="900px">
+<p><img src="img/photo10.png" width="900px"></p>
 
 <br>
 
@@ -69,7 +69,7 @@ Gambar di bawah ini menampilkan program-program yang sedang dieksekusi. Di sini 
 
 <p align="justify"> Pada <i>command line</i>, Ps merupakan inputan yang sudah ada dari sistem. Jika ingin meminta inputan dari keyboard, gunakan perintah cat. Maka output akan langsung tampil.
 
-<img src="img/photo5.png" width="380px">
+<p><img src="img/photo5.png" width="380px"></p>
 
 <br>
 
@@ -96,7 +96,7 @@ Di sini saya akan memberikan 3 contoh layanan sistem operasi :
 
 <p align="justify"> Di Linux Debian 11 terdapat alat pemrosesan kata untuk membuat catatan yang bernama <b>Gnote</b>. Berikut merupakan contoh penggunaannya.
 
-<img src="img/photo12.jpg" width="600px">
+<p><img src="img/photo12.jpg" width="600px"></p>
 
 <br>
 
@@ -107,12 +107,13 @@ Di sini saya akan memberikan 3 contoh layanan sistem operasi :
 <img src="img/photo9.png" width="600px">
 
 <br>
+<br>
 
 ### 3. Proteksi
 
 <p align="justify">Layanan proteksi memastikan bahwa segala akses ke sumber daya terkontrol dan aman. Hal ini bisa dilakukan dengan meminta password bila ingin menggunakan sumber daya. Di bawah ini merupakan contoh proteksi pada <i>command line</i>.
 
-<img src="img/photo8.png" width="250px">
+<p><img src="img/photo8.png" width="250px"></p>
 
 <br>
 
@@ -135,7 +136,7 @@ Di sini saya akan memberikan 3 contoh <i>system call</i> :
 
 <p align="justify"> Manajemen berkas merupakan layanan sistem operasi yang dimana program harus mengatur berkas seperti membuat dan menghapus berkas. Berikut contohnya pada <i>command line</i>.
 
-<img src="img/photo6.png" width="600px">
+<p><img src="img/photo6.png" width="600px"></p>
 
 <br>
 
@@ -147,11 +148,11 @@ Di sini saya akan memberikan 3 contoh <i>system call</i> :
 
 Top :
 
-<img src="img/photo1.png" width="670px"> 
+<p><img src="img/photo1.png" width="670px"></p>
 
 Ps :
 
-<img src="img/photo2.png" width="350px">
+<p><img src="img/photo2.png" width="350px"></p>
 
 <br>
 
@@ -159,7 +160,7 @@ Ps :
 
 <p align="justify">Ketika sebuah proses menggunakan sumber daya terlalu tinggi. Biasanya hal ini membuat kinerja perangkat menjadi lambat atau bahkan dapat menyebabkan <b>hang</b> Biasanya untuk mencegah dan mengatasi ini dilakukan penanganan atau mematikan proses yang tidak terlalu dibutuhkan. Salah satu caranya adalah dengan menggunakan perintah <b>kill</b>. Perintah ini digunakan untuk mengirimkan sinyal ke proses untuk menghentikan aktivitasnya.
 
-<img src="img/photo3.png" width="670px">
+<p><img src="img/photo3.png" width="670px"></p>
 
 Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
 
@@ -169,5 +170,5 @@ Jika perintah di atas dijalankan, maka aplikasi yang dipilih akan berhenti.
 
 <p align="justify">Pada command line, informasi mengenai memori tersedia melalui free perintah. Pada Debian GNU/Linux, Ubuntu dan Linux Mint program ini merupakan bagian dari paket procps.
 
-<img src="img/photo4.png" width="670px">
+<p><img src="img/photo4.png" width="670px"></p>
 
