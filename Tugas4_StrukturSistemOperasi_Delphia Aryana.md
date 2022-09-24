@@ -62,16 +62,11 @@ Contoh sistem operasi yang memiliki struktur sederhana adalah MS-DOS dan UNIX.
 
 <p align="justify"> Menurut Tanenbaum dan Woodhull, sistem terlapis terdiri dari enam lapisan, yaitu:
 
-- __Lapisan 0__. Mengatur alokasi prosesor, pertukaran antar proses ketika interupsi terjadi atau waktu
-habis. Lapisan ini mendukung dasar multi-programming pada CPU.
-- __Lapisan 1__. Mengalokasikan ruang untuk proses di memori utama dan pada 512 kilo word drum
-yang digunakan untuk menahan bagian proses ketika tidak ada ruang di memori utama.
-- __Lapisan 2__. Menangani komunikasi antara masing-masing proses dan operator console. Pada lapis
-ini masing-masing proses secara efektif memiliki opertor console sendiri.
-- __Lapisan 3__. Mengatur peranti M/K dan menampung informasi yang mengalir dari dan ke proses
-tersebut.
-- __Lapisan 4__. Tempat program pengguna. Pengguna tidak perlu memikirkan tentang proses,
-memori, console, atau manajemen M/K.
+- __Lapisan 0__. Mengatur alokasi prosesor, pertukaran antar proses ketika interupsi terjadi atau waktu habis. Lapisan ini mendukung dasar multi-programming pada CPU.
+- __Lapisan 1__. Mengalokasikan ruang untuk proses di memori utama dan pada 512 kilo word drum yang digunakan untuk menahan bagian proses ketika tidak ada ruang di memori utama.
+- __Lapisan 2__. Menangani komunikasi antara masing-masing proses dan operator console. Pada lapis ini masing-masing proses secara efektif memiliki opertor console sendiri.
+- __Lapisan 3__. Mengatur peranti M/K dan menampung informasi yang mengalir dari dan ke proses tersebut.
+- __Lapisan 4__. Tempat program pengguna. Pengguna tidak perlu memikirkan tentang proses, memori, console, atau manajemen M/K.
 - __Lapisan 5__. Merupakan operator sistem.
 
 <p align="center"><i>Lapisan pada Sistem Operasi</i>
