@@ -40,6 +40,7 @@ Contoh sistem operasi yang memiliki struktur sederhana adalah MS-DOS dan UNIX.
 
 <p align="justify">MS-DOS bersifat <i>single mode</i> yaitu tanpa proteksi perangkat keras. Dalam MS-DOS, perintah internal telah dimasukkan ke dalam <i>command.com</i> (interpreter perintah DOS), sehingga dapat langsung dieksekusi oleh kernel DOS dimana saja. Sedangkan perintah eksternal tidak dimasukkan ke dalam <i>command.com</i>, ini berarti dibutuhkan sebuah berkas yang dapat dieksekusi (berupa program DOS) yang harus terdapat dalam direktoriaktif. Berikut merupakan lapisan struktur MS-DOS.
 
+<p align="center"><i>Lapisan Struktur MS-DOS</i>
 <p align="center"><img src="img/foto1.png" width="380px">
 
 <br>
@@ -48,6 +49,7 @@ Contoh sistem operasi yang memiliki struktur sederhana adalah MS-DOS dan UNIX.
 
 <p align="justify">UNIX merupakan contoh sistem struktur sederhana yang baik. Sistem operasi ini memiliki kinerja yang lebih baik dari MS-DOS. UNIX adalah sistem operasi yang terdiri dari 2 bagian penting yaitu kernel dan program sistem. Kernel UNIX berisi sistem <i>file</i>, penjadwalan CPU, manajemen memori dan <i>system call</i>. Sedangkan program sistem bertugas memanggil fungsi yang ada pada kernel. Sejak awal, UNIX dirancang untuk mendukung multitasking, yakni dapat mengerjakan lebih dari satu tugas pada waktu yang bersamaan. Misalnya membuka beberapa <i>shell</i> dan mengerjakan tugas-tugas berbeda pada shell-shell tersebut. Selain itu UNIX memperlakukan <i>device</i> dan <i>file</i> dalam derajat yang sama sehingga tidak ada batasan pada jumlah <i>device</i> yang dipasang. Berikut merupakan struktur sistem UNIX.
 
+<p align="center"><i>Struktur Sistem UNIX</i>
 <p align="center"><img src="img/foto2.png" width="475px">
 
 <br>
@@ -115,7 +117,7 @@ memori, console, atau manajemen M/K.
 - Karena sistem dibagi menjadi beberapa modul, tiap lapisan dapat dirancangdan diuji secara independen.
 - Mempermudah debug dan verifikasi sistem.
 - Lapisan pertama bisa didebug tanpa mengganggu sistem yang lain karenahanya menggunakan perangkat keras dasar untuk implementasi fungsinya.
-- Bila terjadi error saat debugging sejumlah lapisan, error pasti pada lapisanyang baru saja didebug, karena lapisan dibawahnya sudah di debug.
+- Bila terjadi error saat debugging sejumlah lapisan, error pasti pada lapisan yang baru saja didebug, karena lapisan dibawahnya sudah di debug.
 
 <p align="justify">Kelemahan pendekatan berlapis:
  
@@ -129,3 +131,37 @@ memori, console, atau manajemen M/K.
 2. __MULTICS__  dimulai pada tahun 1963 dengan tujuan membangun _operating system timesharing_ yang komprehensif. MULTICS merupakan sistem operasi yang memiliki struktur berlapis dimana program eksekusi dapat diizinkan untuk mengakses sumber daya sistem bernama yang diatur secara hirarkis. 
 
 <br>
+
+## 3) Mikrokernel
+
+<p align="justify">Mikrokernel adalah inti OS kecil yang menyediakan dasar untuk modular extensesi. Metode ini menyusun sistem operasi dengan menghapus semua komponen yang tidak esensial dari <i>kernel</i>, dan mengimplementasikannya sebagai program sistem pada level pengguna. Hasilnya <i>kernel</i> yang lebih kecil. Pada umumnya mikrokernel mendukung proses dan menagemen memori yang minimal, sebagai tambahan untuk fasilitas komunikasi. 
+
+<p align="justify">Fungsi utama mikrokernel adalah mendukung fasilitas komunikasi antara program klien dan bermacam-macam layanan yang juga berjalan di <i>user space</i>. Komunikasi yang dilakukan secara tidak langsung didukung oleh sistem <i>message passing</i> dengan bertukar pesan melalui mikrokernel. 
+
+<p align="justify">Salah satu keuntungan mikrokernel adalah ketika layanan baru akan ditambahkan ke <i>user space</i>, kernel tidak perlu dimodifikasi. Kalau pun harus, perubahan akan lebih sedikit. Hasil sistem operasinya lebih mudah untuk ditempatkan pada suatu desain perangkat keras ke desain lainnya. Mikrokernel juga mendukung keamanan reliabilitas lebih, karena kebanyakan layanan berjalan sebagai pengguna proses. Jika layanan gagal, sistem operasi lainnya tetap terjaga.
+
+<p align="center"><i>Struktur Kernel Mikro</i>
+<p align="center"><img src="img/foto6.png" width="400px">
+
+Keunggulan mikrokernel :
+- Interface yang seragam.
+- Extensibility. Bisa menambahkan fitur-fitur baru tanpa perlu melakukankompilasi ulang.-
+- Flexibility. Fitur-fitur yang sudah ada bisa dikurangi, atau dimodifikasi sesuaidengan kebutuhan sehingga menjadi lebih efisien.-
+- Portability. Pada mikrokernel, semua atau sebagian besar kode yang spesifikberada di dalamnya.
+
+Kelemahan mikrokernel :
+- Kinerja akan berkurang selagi bertambahnya fungsi-fungsi yang digunakan.
+
+<br>
+
+<p align="justify">Contoh struktur sistem operasi mikrokernel :
+
+### Mac OS
+
+<p align="justify">Mac OS adalah sistem operasi yang menggunakan kernel BSD sehinggabeberapa kalangan mengatakan bahwa Mac OS X termasuk dalam keluarga UNIX. Kernel Mac OS mengusung metode struktur ini untuk menghilangkan komponen-komponen yang tidak diperlukan dari kernel dan mengimplementasikannya sebagai sistem dan program-program level user.Hal ini akan menghasilkan kernel yang kecil. Fungsi utama dari jenis ini adalah menyediakan fasilitas komunikasi antara program client dan bermacam pelayanan yang berjalan pada ruang user.
+
+<br>
+
+### Symbian OS
+
+<p align="justify">Sysbian OS merupakan sebuah sistem operasi yang populer digunakan pada <i>handphone, handheld device, embedded device,</i> dan PDA <i>Phone.</i> Sistem operasi ini dikembangkan oleh Symbian Ltd yang dirancang untuk digunakan peralatan melakukan usaha <i>(mobile).</i> Symbian OS memiliki arsitektur mikrokernel, yang membedakannya dari sistem operasi seperti Microsoft Windows dan Linux. Dalam Symbian OS, layanan inti yang akan berada di dalam kernel dalam sistem operasi monolitik dipindahkan ke luar. Penggunaan arsitektur <i>client-server</i> yang meluas, dan perlindungan kode sistem dari klien yang mengikutinya, menjamin ketahanan dan ketersediaan tinggi dari layanan ini. Tujuannya adalah sistem yang kuat yang juga responsif dan dapat diperluas.
