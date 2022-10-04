@@ -16,9 +16,20 @@ NIM : 2110131220012
 
 <br>
 
-## 1) Struktur Sederhana
+## 1) Struktur Sederhana (Sistem Monolitik)
 
 <p align="justify">Pada awalnya, sistem operasi merupakan sistem yang kecil, sederhana, dan terbatas. Seiring berjalannya waktu, sistem operasi semakin berkembang dengan ruang lingkup originalnya. Dalam perkembangan sistem struktur sederhana, terdapat sistem yang terstruktur dengan baik dan ada juga yang kurang baik.
+
+Sistem monolitik mungkin saja memiliki beberapa struktur. Layanan (panggilan sistem) yang disediakan oleh sistem operasi menempatkan parameter di tempat yang ditentukan dengan baik (misalnya, di tumpukan) dan kemudian mengeksekusi petunjuk/instruksi. Instruksi ini mengalihkan mesin dari mode pengguna ke mode kernel dan mentransfer kontrol ke sistem operasi. Sistem operasi kemudian mengambil parameter dan menentukan panggilan sistem mana yang akan dilaksanakan. Setelah itu, indeks ke dalam tabel yang berisi di slot k pointer ke prosedur yang melakukan panggilan sistem.
+
+Organisasi ini menyarankan struktur dasar untuk sistem operasi:
+1. Program utama yang memanggil prosedur layanan yang diminta.
+2. Seperangkat prosedur layanan yang melakukan panggilan sistem.
+3. Seperangkat prosedur utilitas yang membantu prosedur pelayanan.
+
+Dalam model ini, untuk setiap panggilan sistem ada satu prosedur layanan yang menangani dan mengeksekusi. Prosedur utilitas melakukan hal-hal yang diperlukan oleh beberapa prosedur layanan, seperti mengambil data dari program pengguna. Divisi prosedur ini menjadi tiga lapisan seperti pada gambar di bawah ini.
+
+<p align="center"><img src="img/foto7.png" width="520px">
 
 Kelebihan Struktur Sederhana :
 - Layanan dapat dilakukan sangat cepat karena terdapat di satu ruang alamat.
